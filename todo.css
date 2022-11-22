@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body {
+    background-image: linear-gradient(100deg, #d4f1ff, #ffffff);
+    color: #1a150e;
+    transition: 0.3s linear;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+}
+#title
+{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 0 10px #555f67;;
+}
+#addForm
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+#addForm input
+{
+    /* color: white !important; */
+    font-size: 17px;
+}
+.todo-input
+{
+    width:80%;
+    margin: auto;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #01394c;
+    padding: 12px 20px;
+}
+input:focus {
+    outline: none !important;
+    box-shadow: 0 0 10px #719ECE;
+  }
+  
+#addForm button
+{
+   width: 20%;
+   margin: auto;
+   background-color: black;
+   color: white;
+   border: none;
+   border-radius: 20px;
+   padding: 12px 12px;
+   font-size: 15px;
+}
+#addForm button:hover
+{
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+}
+#datetime
+{
+    text-align: center;
+    display: block;
+    color: black;
+}
+#dt{
+    text-align: center;
+}
+.todo
+{
+    width:fit-content;
+    margin: auto;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #b5c4c9;
+    padding: 12px 20px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.todo button
+{
+    width: 30px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    background-color: #01394c;
+}
+
+.todo button:hover
+{
+    box-shadow: 0 0 10px #719ECE;
+}
+.todo li
+{
+    list-style: none;
+    font-size: 1.5rem;
+}
+.fall {
+    transition: 0.5s;
+    transform: translateY(45rem) rotateZ(45deg);
+    opacity: 0;
+}
+  input
+  {
+    width:20%;
+    float: right;
+    margin: auto;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #01394c;
+    padding: 12px 20px;
+    color: white;
+    font-size: 17px;
+  }
+
+ .todo,.drop-btn
+ {
+    cursor: move;
+ } 
+ 
+
+ /* 
+  */
+
+
+  .standard {
+    background-image: linear-gradient(100deg, #ddd6f3 , #faaca8);
+    color: black;
+    transition: 0.3s linear;
+}
+
+.light {
+    background-image: linear-gradient(100deg, #d4f1ff, #ffffff);
+    color: #1a150e;
+    transition: 0.3s linear;
+}
+
+.darker {
+    background-image: linear-gradient(100deg, #001214, #001f29);
+    color: white;
+    transition: 0.3s linear;
+}
+
+#header {
+    float: right;
+    position: sticky;
+    bottom: 0;
+}
+.flexrow-container
+{
+    display: flex;
+}
+
+.theme-selector {
+    border: 1px solid #d1dae3;
+    border-radius: 100%;
+    height: 35px;
+    margin: 0 8px;
+    transition: tranform 150ms ease-in-out, box-shadow 200ms ease-in-out;
+    width: 35px;
+}
+
+.theme-selector:hover { 
+    box-shadow: white 0 0 8px;
+    cursor: pointer;
+}
+
+.theme-selector:active {
+    transform: scale(0.95);
+}
+
+.standard-theme {
+    background-image: linear-gradient(100deg, #ddd6f3 , #faaca8);
+}
+
+.light-theme {
+    background-image: linear-gradient(100deg, #d4f1ff, #ffffff);
+}
+
+.standard-input
+{
+    border: 2px solid black;
+    color: black !important;
+    background-color: white;
+}
+.standard-input ::placeholder
+{
+    color: rgb(255, 255, 255);
+}
+.light-input
+{
+    
+    background-color: #01394c;
+    color: white;
+}
+ .light-input::placeholder
+{
+    color: rgb(255, 255, 255) !important;
+}
+.standard-todo
+{
+   background-color: #000000;
+   color: rgb(255, 255, 255);
+}
+.light-todo
+{
+    background-color: #01394c;
+    color: white;
+}
+.standard-todo .delete-btn,.standard-todo .drop-btn
+{
+    background: linear-gradient(100deg, #ddd6f3 , #faaca8);
+    color : black;
+}
+.standard-todo .delete-btn:hover,.standard-todo .drop-btn:hover
+{
+    box-shadow: 0 0 10px #fb665e;
+}
+.light-todo
+{
+    background-color: #01394c;
+    color: white;
+}
+.light-todo .delete-btn,.light-todo .drop-btn
+{
+    background:  linear-gradient(100deg, #d4f1ff, #ffffff);
+    color : black;
+}
