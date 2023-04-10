@@ -5,13 +5,26 @@ const toDoInput = document.querySelector('.todo-input');
 const toDoDesc = document.querySelector('.todo-description');
 const toDoBtn = document.querySelector('.todo-btn');
 const toDoList = document.querySelector('.todo-list');
-
 // Add
 standardTheme.addEventListener('click', () => changeTheme('standard'));
 lightTheme.addEventListener('click', () => changeTheme('light'));
 toDoBtn.addEventListener('click', addToDo);
 toDoList.addEventListener('click', deletedrop);
 let c='light';
+
+
+
+
+let items = document.querySelectorAll('.todo-list .todo');
+items.forEach(function (item) {
+    item.addEventListener('dragstart', handleDragStart);
+    item.addEventListener('dragenter', handleDragEnter);
+    item.addEventListener('dragleave', handleDragLeave);
+    item.addEventListener('dragend', handleDragEnd);
+    item.addEventListener('dragover', handleDragOver);
+    item.addEventListener('drop', handleDrop);
+});
+
 function addToDo(event) {
     event.preventDefault();
     const toDoDiv = document.createElement("div");
@@ -43,7 +56,16 @@ function addToDo(event) {
 
         // Append to list;
         toDoList.appendChild(toDoDiv);
-
+        items = document.querySelectorAll('.todo-list .todo');
+        console.log(items);
+        items.forEach(function (item) {
+            item.addEventListener('dragstart', handleDragStart);
+            item.addEventListener('dragenter', handleDragEnter);
+            item.addEventListener('dragleave', handleDragLeave);
+            item.addEventListener('dragend', handleDragEnd);
+            item.addEventListener('dragover', handleDragOver);
+            item.addEventListener('drop', handleDrop);
+        });
         // CLearing the input;
         toDoInput.value = '';
     }
@@ -109,3 +131,57 @@ function changeTheme(color) {
     // c=color;
     document.querySelector('.todo').classList.add(`${color}-todo`);
 }
+
+
+
+// addEventlisteners(e){
+
+
+//     let div=document.querySelector(".todo");
+//     let li=document.querySelector(".todo-item");
+
+
+
+
+
+// }
+
+
+function handleDragStart(e) {
+    this.style.opacity = '0.4';
+
+    dragSrcEl = this;
+
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function handleDragEnd(e) {
+    this.style.opacity = '1';
+
+    items.forEach(function (item) {
+        item.classList.remove('over');
+    });
+}
+
+function handleDragOver(e) {
+    e.preventDefault();
+}
+
+function handleDragEnter(e) {
+    this.classList.add('over');
+}
+
+function handleDragLeave(e) {
+    this.classList.remove('over');
+}
+function handleDrop(e) {
+      e.stopPropagation();
+    if (dragSrcEl !== this) {
+        dragSrcEl.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData('text/html');
+    }
+
+      return false;
+}
+
